@@ -957,6 +957,22 @@ strong { font-weight: 600; }
   color: var(--color-text);
 }
 
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: all var(--transition-base);
+}
+
+.map-link:hover {
+  color: var(--color-accent-dark, #9a7d09);
+  gap: 8px;
+}
+
 .appointment__form-card {
   background: var(--color-white);
   border-radius: var(--radius-lg);
