@@ -278,55 +278,24 @@
       <!-- Sidebar -->
       <aside class="service-sidebar">
 
-        <div class="sidebar-widget">
-          <h3 class="sidebar-widget__title">Diğer Hizmet Alanlarımız</h3>
-          <nav class="sidebar-nav">
-            <a href="aile-ve-bosanma-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Aile ve Boşanma Hukuku
-            </a>
-            <a href="ceza-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Ceza Hukuku
-            </a>
-            <a href="is-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              İş Hukuku
-            </a>
-            <a href="gayrimenkul-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Gayrimenkul Hukuku
-            </a>
-            <a href="miras-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Miras Hukuku
-            </a>
-            <a href="tazminat-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Tazminat Hukuku
-            </a>
-            <a href="icra-ve-iflas-hukuku.html" class="sidebar-nav__item sidebar-nav__item--active">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              İcra ve İflas Hukuku
-            </a>
-            <a href="tuketici-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Tüketici Hukuku
-            </a>
-            <a href="sirketler-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Şirketler Hukuku
-            </a>
-            <a href="yabancilar-hukuku.html" class="sidebar-nav__item">
-              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-              Yabancılar Hukuku
-            </a>
-          </nav>
+        <div class="sidebar-nav">
+          <h3 class="sidebar-nav__title">Diğer Hizmetlerimiz</h3>
+          <ul>
+            <li><a href="aile-ve-bosanma-hukuku.html">Aile ve Boşanma Hukuku</a></li>
+            <li><a href="ceza-hukuku.html">Ceza Hukuku</a></li>
+            <li><a href="is-hukuku.html">İş Hukuku</a></li>
+            <li><a href="gayrimenkul-hukuku.html">Gayrimenkul Hukuku</a></li>
+            <li><a href="miras-hukuku.html">Miras Hukuku</a></li>
+            <li><a href="tazminat-hukuku.html">Tazminat Hukuku</a></li>
+            <li class="active"><a href="icra-ve-iflas-hukuku.html">İcra ve İflas Hukuku</a></li>
+            <li><a href="tuketici-hukuku.html">Tüketici Hukuku</a></li>
+            <li><a href="sirketler-hukuku.html">Şirketler Hukuku</a></li>
+            <li><a href="yabancilar-hukuku.html">Yabancılar Hukuku</a></li>
+          </ul>
         </div>
 
-        <div class="sidebar-widget">
-          <h3 class="sidebar-widget__title">Hızlı Randevu</h3>
-          <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 1.5rem;">Formu doldurun, sizi en kısa sürede arayalım.</p>
+        <div class="sidebar-contact">
+          <h3>Hızlı Randevu</h3>
           <form data-form="sidebar-appointment">
             <div class="form__group">
               <label class="form__label" for="s-name">Ad Soyad *</label>
@@ -337,33 +306,14 @@
               <input class="form__input" type="tel" id="s-phone" name="phone" required placeholder="05XX XXX XX XX">
             </div>
             <div class="form__group">
-              <label class="form__label" for="s-subject">Konu</label>
-              <select class="form__select" id="s-subject" name="subject">
-                <option value="icra" selected>İcra ve İflas Hukuku</option>
-                <option value="aile">Aile ve Boşanma Hukuku</option>
-                <option value="ceza">Ceza Hukuku</option>
-                <option value="is">İş Hukuku</option>
-                <option value="diger">Diğer</option>
-              </select>
+              <label class="form__label" for="s-message">Kısa Bilgi</label>
+              <textarea class="form__textarea" id="s-message" name="message" rows="3" placeholder="Durumunuzu kısaca belirtin..."></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--block">Randevu Talep Et</button>
           </form>
-          <div style="margin-top: 1.5rem; text-align: center;">
-            <a href="https://wa.me/905553916157?text=Merhaba%2C%20icra%20ve%20iflas%20hukuku%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn--outline btn--block" target="_blank" rel="noopener">
-              WhatsApp ile Yazın
-            </a>
-          </div>
-        </div>
-
-        <div class="sidebar-widget">
-          <h3 class="sidebar-widget__title">İletişim Bilgileri</h3>
-          <div class="footer__contact-item" style="margin-bottom: 1rem;">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--gold)"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.66.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.58 3.66 1 1 0 01-.24 1.01l-2.22 2.12z"/></svg>
-            <a href="tel:+905553916157" style="color: var(--navy); font-weight: 600;">0555 391 61 57</a>
-          </div>
-          <div class="footer__contact-item">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--gold)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 7a2.5 2.5 0 010 5z"/></svg>
-            <span style="font-size: 0.875rem;">Kayalar İş Merkezi, Yavuz Selim, 1020. Sk. No:1 K:3 D:62, 34203 Bağcılar/İstanbul</span>
+          <div class="sidebar-contact__phone">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.66.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.58 3.66 1 1 0 01-.24 1.01l-2.22 2.12z"/></svg>
+            <a href="tel:+905553916157">0555 391 61 57</a>
           </div>
         </div>
 
