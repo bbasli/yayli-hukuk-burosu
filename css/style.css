@@ -1534,13 +1534,18 @@ strong { font-weight: 600; }
 .service-content h2 {
   margin-top: var(--space-2xl);
   margin-bottom: var(--space-md);
-  font-size: 1.6rem;
+  font-size: 1.85rem;
+  color: var(--dark);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.75rem;
+  margin-left: -0.9375rem;
 }
 
 .service-content h3 {
   margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
-  font-size: 1.3rem;
+  font-size: 1.45rem;
+  color: var(--dark);
 }
 
 .service-content p {
