@@ -350,7 +350,7 @@ Her sayfa sonunda SSS bölümü (5-8 soru).
 | **Ekip** | 2 avukat |
 | **Logo** | Mevcut değil — tasarlanacak |
 | **Adres** | Kayalar İş Merkezi, Yavuz Selim, 1020. Sk. No:1 K:3 D:62, 34203 Bağcılar/İstanbul |
-| **Telefon / WhatsApp** | 0555 391 61 57 |
+| **Telefon / WhatsApp** | 0543 504 1998 |
 | **Çoklu dil (İngilizce)** | Şimdilik hayır — ileride eklenebilir |
 | **Hesaplama araçları** | Şimdilik hayır — ileride eklenebilir |
 | **Domain** | Henüz yok — site tamamlandıktan sonra alınacak |
