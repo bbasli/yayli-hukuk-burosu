@@ -694,19 +694,12 @@ strong { font-weight: 600; }
   z-index: -1;
 }
 
-.about-brief__img-placeholder {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  aspect-ratio: 4/3;
+.about-brief__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-brief__img-placeholder svg {
-  width: 80px;
-  height: 80px;
-  fill: rgba(255, 255, 255, 0.15);
+  aspect-ratio: 4/3;
 }
 
 /* --- Practice Areas --- */
