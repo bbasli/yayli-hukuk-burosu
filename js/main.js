@@ -136,6 +136,109 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* --- Reviews Slider --- */
+  (function () {
+    var track = document.getElementById('reviewsTrack');
+    var dotsContainer = document.getElementById('reviewsDots');
+    var prevBtn = document.getElementById('reviewsPrev');
+    var nextBtn = document.getElementById('reviewsNext');
+    if (!track) return;
+
+    var slides = track.querySelectorAll('.reviews-slide');
+    var total = slides.length;
+    var current = 0;
+    var autoTimer;
+
+    function getSlidesPerView() {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function getTotalPages() {
+      return Math.ceil(total / getSlidesPerView());
+    }
+
+    function buildDots() {
+      while (dotsContainer.firstChild) dotsContainer.removeChild(dotsContainer.firstChild);
+      var pages = getTotalPages();
+      for (var i = 0; i < pages; i++) {
+        var btn = document.createElement('button');
+        btn.className = 'reviews-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', (i + 1) + '. sayfaya git');
+        btn.dataset.index = i;
+        btn.addEventListener('click', function () {
+          goTo(parseInt(this.dataset.index));
+        });
+        dotsContainer.appendChild(btn);
+      }
+    }
+
+    function updateDots() {
+      var page = Math.floor(current / getSlidesPerView());
+      dotsContainer.querySelectorAll('.reviews-dot').forEach(function (dot, i) {
+        dot.classList.toggle('active', i === page);
+      });
+    }
+
+    function goTo(page) {
+      var spv = getSlidesPerView();
+      current = page * spv;
+      if (current >= total) current = 0;
+      var slideWidth = slides[0].offsetWidth;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      track.style.transform = 'translateX(-' + current * (slideWidth + gap) + 'px)';
+      updateDots();
+    }
+
+    function next() {
+      var spv = getSlidesPerView();
+      var page = Math.floor(current / spv);
+      var totalPages = getTotalPages();
+      goTo((page + 1) % totalPages);
+    }
+
+    function prev() {
+      var spv = getSlidesPerView();
+      var page = Math.floor(current / spv);
+      var totalPages = getTotalPages();
+      goTo((page - 1 + totalPages) % totalPages);
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 5000);
+    }
+
+    buildDots();
+    startAuto();
+
+    if (nextBtn) nextBtn.addEventListener('click', function () { next(); startAuto(); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { prev(); startAuto(); });
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        current = 0;
+        track.style.transform = 'translateX(0)';
+        buildDots();
+      }, 200);
+    }, { passive: true });
+
+    var touchStartX = 0;
+    track.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) next(); else prev();
+        startAuto();
+      }
+    }, { passive: true });
+  }());
+
   /* --- Phone number click tracking (GA4) --- */
   document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
     link.addEventListener('click', function () {
