@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /makaleler.html
+
+Sitemap: https://yaylihukuk.com/sitemap.xml
