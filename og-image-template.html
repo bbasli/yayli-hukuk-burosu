@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0d1b2a;
+      font-family: 'Playfair Display', Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Sol altın şerit */
+    .stripe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, #b8960b 20%, #b8960b 80%, transparent);
+    }
+
+    /* Sağ subtle desen */
+    .bg-pattern {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 400px;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 50%, rgba(184,150,11,0.05) 0%, transparent 70%);
+    }
+
+    /* İnce yatay çizgiler — arka plan doku */
+    .bg-lines {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(255,255,255,0.02) 39px,
+        rgba(255,255,255,0.02) 40px
+      );
+    }
+
+    /* Ana içerik */
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 60px 80px 60px 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sol — metin bloğu */
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 680px;
+    }
+
+    .label {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #b8960b;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .firm-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.15;
+      color: #f0e8d0;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .firm-name span {
+      color: #b8960b;
+    }
+
+    .subtitle {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: rgba(240,232,208,0.55);
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #b8960b;
+      margin-bottom: 28px;
+    }
+
+    .location-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .location-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #b8960b;
+      flex-shrink: 0;
+    }
+
+    .location {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: rgba(240,232,208,0.6);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Sağ — terazi simgesi */
+    .icon-block {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-left: 40px;
+    }
+
+    .scales-svg {
+      opacity: 0.85;
+    }
+
+    .domain {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: rgba(184,150,11,0.6);
+      letter-spacing: 2px;
+    }
+
+    /* Alt köşe aksan */
+    .corner-accent {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      border-top: 1px solid rgba(184,150,11,0.12);
+      border-left: 1px solid rgba(184,150,11,0.12);
+      border-top-left-radius: 200px;
+      pointer-events: none;
+    }
+
+    .corner-accent-2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 130px;
+      height: 130px;
+      border-top: 1px solid rgba(184,150,11,0.08);
+      border-left: 1px solid rgba(184,150,11,0.08);
+      border-top-left-radius: 130px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stripe"></div>
+  <div class="bg-pattern"></div>
+  <div class="bg-lines"></div>
+  <div class="corner-accent"></div>
+  <div class="corner-accent-2"></div>
+
+  <div class="content">
+    <!-- Metin bloğu -->
+    <div class="text-block">
+      <div class="label">Hukuk &amp; Danışmanlık</div>
+      <h1 class="firm-name">
+        <span>Yaylı</span> Hukuk ve<br>Danışmanlık Bürosu
+      </h1>
+      <p class="subtitle">Avukatlık &amp; Hukuki Danışmanlık</p>
+      <div class="divider"></div>
+      <div class="location-row">
+        <div class="location-dot"></div>
+        <span class="location">Bağcılar &nbsp;/&nbsp; İstanbul</span>
+      </div>
+    </div>
+
+    <!-- Terazi simgesi -->
+    <div class="icon-block">
+      <svg class="scales-svg" width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Merkez direk -->
+        <line x1="80" y1="28" x2="80" y2="140" stroke="#b8960b" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Üst yatay kol -->
+        <line x1="28" y1="44" x2="132" y2="44" stroke="#b8960b" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Üst top -->
+        <circle cx="80" cy="28" r="5" fill="#b8960b"/>
+        <!-- Merkez yuvarlak -->
+        <circle cx="80" cy="44" r="3.5" fill="none" stroke="#b8960b" stroke-width="2"/>
+        <!-- Sol kefe zincir -->
+        <line x1="28" y1="44" x2="22" y2="90" stroke="#b8960b" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <line x1="28" y1="44" x2="34" y2="90" stroke="#b8960b" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <!-- Sol kefe -->
+        <path d="M14 90 Q22 98 30 90" stroke="#b8960b" stroke-width="2" fill="rgba(184,150,11,0.15)" stroke-linecap="round"/>
+        <line x1="14" y1="90" x2="30" y2="90" stroke="#b8960b" stroke-width="2" stroke-linecap="round"/>
+        <!-- Sağ kefe zincir (hafif aşağı — dengesiz terazi) -->
+        <line x1="132" y1="44" x2="126" y2="98" stroke="#b8960b" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <line x1="132" y1="44" x2="138" y2="98" stroke="#b8960b" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <!-- Sağ kefe -->
+        <path d="M120 98 Q128 106 136 98" stroke="#b8960b" stroke-width="2" fill="rgba(184,150,11,0.15)" stroke-linecap="round"/>
+        <line x1="120" y1="98" x2="136" y2="98" stroke="#b8960b" stroke-width="2" stroke-linecap="round"/>
+        <!-- Alt taban -->
+        <line x1="62" y1="140" x2="98" y2="140" stroke="#b8960b" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="domain">yaylihukuk.com</span>
+    </div>
+  </div>
+</body>
+</html>
