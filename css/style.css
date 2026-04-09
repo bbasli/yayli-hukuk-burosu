@@ -869,7 +869,7 @@ strong { font-weight: 600; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
-  align-items: start;
+  align-items: stretch;
 }
 
 .appointment__info {
@@ -929,6 +929,13 @@ strong { font-weight: 600; }
 .map-link:hover {
   color: var(--color-accent-dark, #9a7d09);
   gap: 8px;
+}
+
+.appointment__map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border-top: 3px solid var(--color-accent);
 }
 
 .appointment__form-card {
